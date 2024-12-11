@@ -1,61 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chat Application</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    #chat-container {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    #messages {
-      border: 1px solid #ddd;
-      padding: 10px;
-      height: 300px;
-      overflow-y: auto;
-      margin-bottom: 20px;
-    }
-    #messages p {
-      margin: 5px 0;
-    }
-    #message-form {
-      display: flex;
-      gap: 10px;
-    }
-    #message-form input[type="text"] {
-      flex: 1;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-    }
-    #message-form button {
-      padding: 10px;
-      border: none;
-      background-color: #4CAF50;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    #message-form button:hover {
-      background-color: #45a049;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Nomura FAQ SYSTEM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        #wrapper {
+            background-color: #17494d;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        #header {
+            background-color: #17494d;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        .header-title {
+            font-size: 1.5rem;
+            color: white;
+            margin-left: 1rem;
+        }
+        .messages-container {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            background-color: #ffffff;
+            border-top: 1px solid #ddd;
+        }
+        .message {
+            margin-bottom: 1rem;
+        }
+        .message.user {
+            text-align: right;
+            color: #007bff;
+        }
+        .message.bot {
+            text-align: left;
+            color: #333;
+        }
+        #footer {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            border-top: 1px solid #ddd;
+        }
+        #footer textarea {
+            flex: 1;
+            resize: none;
+            border-radius: 5px;
+            padding: 0.5rem;
+        }
+        #sendButton {
+            margin-left: 0.5rem;
+            padding: 0.5rem 1rem;
+        }
+    </style>
 </head>
 <body>
-  <div id="chat-container">
-    <h1>Chat Application</h1>
-    <div id="messages"></div>
-    <form id="message-form">
-      <input type="text" id="message-input" placeholder="Enter your message..." required>
-      <button type="submit">Send</button>
-    </form>
-  </div>
 
-  <script src="client.js"></script>
+<div id="wrapper">
+    <!-- Header -->
+    <div id="header">
+        <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="#FFFFFF"><path d="M11.293 4.293a1 1 0 011.414 0l7 7A1.006 1.006 0 0120 12l-.004-.086.003.054L20 12a1.018 1.018 0 01-.146.52 1.035 1.035 0 01-.147.187l.08-.09a1.003 1.003 0 01-.007.008l-.073.082-7 7a1 1 0 01-1.414-1.414L16.585 13H5a1 1 0 01-.993-.883L4 12a1 1 0 011-1h11.585l-5.292-5.293a1 1 0 01-.083-1.32z"></path></g></svg>
+        <div class="header-title">野村综研 FAQ System</div>
+    </div>
+
+    <!-- Messages Container -->
+    <div class="messages-container" id="messagesContainer">
+        <div class="message bot">
+            <strong>NOMURA:</strong> こんにちは、NOMURA AIです。あなたのデジタルアシスタントです。どうしますか？
+        </div>
+    </div>
+
+    <!-- Footer Input -->
+    <div id="footer">
+        <textarea id="userInput" rows="1" placeholder="メッセージを入力..."></textarea>
+        <button id="sendButton" class="btn btn-primary">送信</button>
+    </div>
+</div>
+
+<script src="client.js"></script>
+
 </body>
 </html>
