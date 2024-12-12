@@ -1,5 +1,5 @@
 // const API_URL = 'http://localhost:5000/ask_gpt'; // Update with your server's URL
-const API_URL = 'https://12054-o.azurewebsites.net/ask_gpt'; // Update with your server's URL
+const API_URL = 'https://mytest125.azurewebsites.net/ask_gpt'; // Update with your server's URL
 
 document.getElementById('sendButton').addEventListener('click', sendMessage);
     document.getElementById('userInput').addEventListener('keypress', function (e) {
