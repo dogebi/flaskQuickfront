@@ -1,4 +1,4 @@
-const API_URL = 'https://namcheck1217.azurewebsites.net/ask_gpt'; // Update with your server's URL
+const API_URL = 'https://namcheckweb.azurewebsites.net/ask_gpt'; // Update with your server's URL
 
 document.getElementById('sendButton').addEventListener('click', sendMessage);
     document.getElementById('userInput').addEventListener('keypress', function (e) {
